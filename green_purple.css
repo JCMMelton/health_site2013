@@ -10,7 +10,7 @@ h1{
 #wrapper{
 	min-height: 800px;
 	width: 1000px;
-	background-image: url("flowers.jpg");
+	background-image: url("flowers_double.png");
 	background-repeat: none;
 	overflow: hidden;
 	margin: 0px auto;
