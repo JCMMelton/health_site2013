@@ -1,17 +1,16 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<!-- <link href='http://fonts.googleapis.com/css?family=Playfair+Display' rel='stylesheet' type='text/css'> -->
+	<link href='http://fonts.googleapis.com/css?family=Playfair+Display' rel='stylesheet' type='text/css'>
 	<meta charset='utf8'>
 	<title> Choosing how you age </title>
 	<link rel='stylesheet' type='text/css' href='green_purple.css'>
-	<!--<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>-->
-	<script src="jquery.min.js"></script>
+	<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
 	<script>
 		$(document).ready(function(){
-			// $('#content2').hide();
-			$("#products_page, #practices_page, #download_page").hide();
-			$('ul li').hover(function(){
+			$(".tab").hide();
+			$('#home_page').show();
+			$(' #home_page ul li').hover(function(){
 				$(this).toggleClass('btn-off btn-hvr');
 				$(this).mousedown(function(){
 					$(this).toggleClass('btn-hvr btn-clk');
@@ -20,25 +19,11 @@
 					$(this).toggleClass('btn-clk btn-hvr');
 				});
 			});
-			// $("#about_page, #products_page, #practices_page, #download_page").click(function(){
-			// 	$(".hidden").slideToggle();
-			// 	$(".unhidden").slideToggle();
-			// });
-			$("#about").click(function(){
-				$("#about_page").show();
-				$("#products_page, #practices_page, #download_page").hide();
-			});
-			$("#products").click(function(){
-				$("#products_page").show();
-				$("#about_page, #practices_page, #download_page").hide();
-			});
-			$("#practices").click(function(){
-				$("#practices_page").show();
-				$("#products_page, #about_page, #download_page").hide();
-			});
-			$("#download").click(function(){
-				$("#download_page").show();
-				$("#products_page, #practices_page, #about_page").hide();
+			
+			$("li").click(function(){
+				var tab = "#"+$(this).attr('id')+"_page";
+				$('.tab').hide();
+				$(tab).show();
 			});
 
 			//AJAX
@@ -52,58 +37,118 @@
 	<div id='wrapper'>
 		<div id='header'>
 			<p class='big'>Choosing How You Age</p>
-
-
 		</div>
 		
 		
 
 		<div id='content'>
-			<ul>
-				<li id='about'><!-- <a href='#' id='about'> -->About Me<!-- </a> --></li>
-				<li id='products'><!-- <a href='#' id='products'> -->Products<!-- </a> --></li>
-				<li id='practices'><!-- <a href='#' id='practices'> -->The Four Practices<!-- </a> --></li>
-				<li id='download'><!-- <a href='#' id='download'> -->Download Book<!-- </a> --></li>
+			<ul id='nav-list'>
+				<li id='home'><a href='#'>Home</a></li>
+				<li id='products'><a href='#'>Products</a></li>
+				<li id='practices'><a href='#'>The Four Practices</a></li>
+				<li id='download'><a href='#'>Download Book</a></li>
+				<li id='services'><a href='#'>Services</a></li>
+				<li id='about_me'><a href='#'>About me</a></li>
 			</ul>
 
 
-			<div id="about_page">
+			<div id="home_page" class='tab'>
 
-				<p><img src='photo.jpg' alt='photo'/><span class="big-letter">W</span>hat if I told you that aging doesn’t have to be depressing or awful? 
+				<p><img src='photo.jpg' alt='photo'/>
+				What if I told you that aging doesn&#39t have to be depressing or awful? 
 				Can you imagine feeling enthusiastic about your life as you age?
 				My name is Linda Kent, and I want to welcome you to my website and 
 				share with you a lot of encouraging information and research, including 
 				four practices that will transition you towards a healthier, happier 
 				perspective of later life.</p>
 
-				<p><span class="big-letter">T</span>he system of Four Practices allows you to view the second cycle of life 
+				<p>The system of Four Practices allows you to view the second cycle of life 
 				as a gift of possibilities. You can learn how to feel more energetic and 
 				calm while coming to understand how to free yourself to enjoy a happy, 
 				creative, more vibrant life.</p>
 
-				<p><span class="big-letter">T</span>his system represents a whole-person approach, addressing all 
-				aspects of peoples’ needs—physical, mental, emotional, spiritual and 
+				<p>This system represents a whole-person approach, addressing all 
+				aspects of peoples&#39 needs- physical, mental, emotional, spiritual and 
 				environmental. Everything is connected.</p>
 
-				<p><span class="big-letter">T</span>his site isn't about anti-aging, but rather about how to enjoy and enhance your life at whatever stage you're at now. I look forward to offering on-line classes, private sessions which can be done in person or over the phone with equally effective results, new products, and forwarding a lot of usable information.</p>
+				<p>This site isn&#39t about anti-aging, but rather about how to enjoy and enhance your life at whatever stage you&#39re at now. I look forward to offering on-line classes, private sessions which can be done in person or over the phone with equally effective results, new products, and forwarding a lot of usable information.</p>
 
 			</div>
-			<div id='products_page'>
+			<div id='products_page' class='tab'>
 				products
 			</div>
-			<div id='practices_page'>
-				<p>practices</p>
-				<p>nutrition</p><p><img src='veggies.jpg' alt='veg' id='veg' /></p>
-				<p>tong ren</p><p><img src='dummy.png' alt='dum' id='dum'/></p>
-				<p>the law of attraction</p><p><img src='sky_water.png' alt='sky' id='sky'/></p>
-				<p>tapping</p><p><img src='tapping.png' alt='tap' id='tap'/></p>
+			<div id='practices_page' class='tab'>
+
+				<p>
+					The Four Practices consist of Tong Ren, healthy nutrition, tapping, and the Law of Attraction Principles. These practices will allow you to view this time in your life as one of renewal.
+					The first two practices are forms of Energy Therapy that address the energetic systems of the body.As long as the flow of energy within us continues to circulate without resistance or becoming blocked, the body remains in a balanced state. 
+
+				</p>
+				<h3>Nutrition</h3>
+				<p>
+					<img src='veggies.png' alt='sky' id='sky' style='float: left'/>
+					Tapping is a form of Energy Psychology often called “acupuncture without needles.”  This self-help technique involves tapping on specific points of the body with the fingers to release negative feelings and emotions such as guilt, depression, fear, a sense of being overwhelmed, and grief, all of which can be stored inside the body.
+
+				</p>
+				<h3>Tong Ren</h3>
+				<p>
+					<img src='dummy.png' alt='sky' id='sky' style='float: left'/>
+					Tapping is a form of Energy Psychology often called  &#34acupuncture without needles. &#34  This self-help technique involves tapping on specific points of the body with the fingers to release negative feelings and emotions such as guilt, depression, fear, a sense of being overwhelmed, and grief, all of which can be stored inside the body.
+
+				</p>
+				<h3>the law of attraction</h3>
+				<p>
+					<img src='sky_water.png' alt='sky' id='sky' style='float: right'/>
+					Understanding and applying Law of Attraction processes and principles allows you to purposefully make desired changes in your life that can contribute to improved health, enriched relationships, a more satisfying career and more. I view the Law of Attraction as a map to the spiritual life that teaches us new ways to deal with adversity, understand the power of gratitude and release negative feelings and patterns. One of the most exciting things about working with the Law of Attraction is learning how to stay in a high vibration state, thus ensuring a life filled with peace and enthusiasm. 
+				</p>	
+				<h3>Tapping</h3>
+				<p>
+					<img src='tapping.png' alt='sky' id='sky' style='float: right'/>
+					Tapping is a form of Energy Psychology often called  &#34acupuncture without needles.&#34  This self-help technique involves tapping on specific points of the body with the fingers to release negative feelings and emotions such as guilt, depression, fear, a sense of being overwhelmed, and grief, all of which can be stored inside the body.
+
+				</p>	
 			</div>
-			<div id='download_page'>
-				download
+			<div id='download_page' class='tab'>
+				<a href='My Favorite Products.doc' download='My_favorite_products.doc'>Download</a>	</div>
+			<div id='services_page' class='tab'>
+				<p>Tong-Ren -- $50 per half-hour (most people only need a half-hour session).</p>
+				<p>Tapping -- $90 per session.  Special reduced pricing is available for a 6 session package </p>
+				<p>Law of Attraction -- $90 per session.</p>
+				<p>Nutrition -- $90 per session.</p>
+				<h2>Foundational Whole Health Coaching</h2>
+				<p> The philosophy of Foundational Whole Health Coaching maintains that the whole person must be addressed in order to experience sustained energy flow, sustained good health, sustained happiness and sustained peace.</p>
+
+				<p>During a session, I follow a specific model that includes asking powerful questions about the emotional, mental, physical, spiritual and environmental aspects of your life. I listen as you tell me your story. Then, almost miraculously, YOU are able to discover the root cause of your issues. As partners in this process, I am thrilled to share the heartfelt energy of joy, gratitude and grace that encompasses us as you gain clarity about who you really are.</p>
+
+				<h3>Finally, I give you effective tools to use and learn that will allow you to:</h3>
+				<ol>
+					<li>release repetitive, negative thoughts you can&#39t seem to let go of so you can:
+						<ul>
+							<li>build up inner resilience and move ahead with self-confidence</li>
+							<li>balance your parasympathetic nervous system so all systems in your body are calm</li>
+							<li>bring more oxygen to your cells and organs through spinal alignment</li>
+							<li>reduce inflammation</li>
+							<li>strengthen your immune system</li>
+							<li>release fear so you can reconnect with the spiritual aspect of yourself</li>
+							<li>dissolve cortisol, a stress hormone</li>
+							<li>retrain your brain to react differently</li>
+							<li>bring a deeper level of consciousness to the surface so joy, peace and 
+								appreciation become your automatic states of being
+							</li>
+						</ul>
+					</li>
+					<li>Be aware of when you&#39re not in alignment and be able to quickly shift into
+					that desired state.</li>
+				</ol>
+			</div>
+			<div id='about_me_page' class='tab'>
+				<p>Linda Kent, M.Ed., Nutritional Consultant, Tong Ren Therapist, Meridian Therapy Practitioner and Certified Law of Attraction Coach, is an educator providing you with up-to-date information, research and powerful practices that can change your life.</p>
+				<p>Linda has studied many healing methods because she believes in addressing the whole person when working with clients. Her non-invasive, gentle yet powerful practices stimulate the body&#39s natural impulses to heal on all levels. She teaches others to sustain this state of mind/body balance, when the body is aligned to recalibrate towards wellness and peace.</p>
+
+				<p>Linda facilitates workshops throughout Michigan and is available to teach a variety of wellness topics. She leads weekly Tong Ren healing classes that are open to everyone. </p>
 			</div>
 		</div>
-
-	</div>
+	</div> <!--end of wrapper-->
 </body>
 </html>
 
