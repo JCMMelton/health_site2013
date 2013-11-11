@@ -26,6 +26,14 @@
 				$(tab).show();
 			});
 
+			$('form').submit(function(){
+				$.post($(this).attr('action'), $(this).serialize(),function(data){
+					$('#results').html(data.message);
+					$('#results a').css('color', 'white');
+				}, 'json');
+				return false;
+			});
+
 			//AJAX
 
 			
@@ -75,20 +83,27 @@
 
 			</div>
 			<div id='products_page' class='tab'>
-				products
+				<h3>Gia Wellness Phone Neutralizers</h3>
+				<p>
+					My family and I have been using cell phone chips for years. People 
+					don’t realize the amount of radiation that is emitted from cell phones 
+					and the effect it can have on their health. I am especially concerned 
+					about the growing number of young children using unprotected cell 
+					phones.  To learn more, view <a href="www.giawellness.com" style="color: white;">www.giawellness.com</a> and take a look at the Cell 
+					Guard video. If you are interested in purchasing chips, you can go 
+					online or call 1-866-999-2747. Either way you will be requested to give 
+					this referral number: 40395.
+				</p>
 			</div>
 			<div id='practices_page' class='tab'>
-
 				<p>
 					The Four Practices consist of Tong Ren, healthy nutrition, tapping, and the Law of Attraction Principles. These practices will allow you to view this time in your life as one of renewal.
 					The first two practices are forms of Energy Therapy that address the energetic systems of the body.As long as the flow of energy within us continues to circulate without resistance or becoming blocked, the body remains in a balanced state. 
-
 				</p>
 				<h3>Nutrition</h3>
 				<p>
 					<img src='veggies.png' alt='sky' id='sky' style='float: left'/>
 					Tapping is a form of Energy Psychology often called “acupuncture without needles.”  This self-help technique involves tapping on specific points of the body with the fingers to release negative feelings and emotions such as guilt, depression, fear, a sense of being overwhelmed, and grief, all of which can be stored inside the body.
-
 				</p>
 				<h3>Tong Ren</h3>
 				<p>
@@ -109,7 +124,14 @@
 				</p>	
 			</div>
 			<div id='download_page' class='tab'>
-				<a href='My Favorite Products.doc' download='My_favorite_products.doc'>Download</a>	</div>
+				<p>As my gift to you, I have included a small document highlighting some of my favorite products and practices. 
+				   Upon your submission of a valid email, a button will appear to start your download.</p>
+				   <form action='process.php' method='post'>
+				   		<input type='text' name='email'>
+				   		<input type='submit' value='Sign up for your free gift!'>
+				   </form>
+				   <p id='results'></p>
+			</div>
 			<div id='services_page' class='tab'>
 				<p>Tong-Ren -- $50 per half-hour (most people only need a half-hour session).</p>
 				<p>Tapping -- $90 per session.  Special reduced pricing is available for a 6 session package </p>
